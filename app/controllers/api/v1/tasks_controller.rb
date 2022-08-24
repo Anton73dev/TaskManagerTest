@@ -1,18 +1,19 @@
 class Api::V1::TasksController < Api::V1::ApplicationController
+  respond_to :json
   def index
-    tasks = Task.all.
+    tasks = Task.order(id: :desc).
       ransack(ransack_params).
       result.
       page(page).
       per(per_page)
 
-    respond_with(tasks, each_serializer: TaskSerializer, root: 'items', meta: build_meta(tasks))
+    render(json: tasks, each_serializer: TaskSerializer, root: 'items', meta: build_meta(tasks))
   end
 
   def show
     task = Task.find(params[:id])
 
-    respond_with(task, serializer: TaskSerializer)
+    render(json: task, serializer: TaskSerializer)
   end
 
   def create
@@ -24,9 +25,10 @@ class Api::V1::TasksController < Api::V1::ApplicationController
 
   def update
     task = Task.find(params[:id])
+
     task.update(task_params)
 
-    respond_with(task, serializer: TaskSerializer)
+    render(json: task, serializer: TaskSerializer)
   end
 
   def destroy
