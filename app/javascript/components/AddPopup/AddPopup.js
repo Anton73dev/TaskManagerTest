@@ -21,7 +21,6 @@ function AddPopup({ onClose, onCreateCard }) {
   const [errors, setErrors] = useState({});
   const handleCreate = () => {
     setSaving(true);
-
     onCreateCard(task).catch((error) => {
       setSaving(false);
       setErrors(error || {});
