@@ -55,7 +55,7 @@ UserSelect.defaultProps = {
   isClearable: false,
   isDisabled: false,
   isRequired: false,
-  value: {},
+  value: undefined,
   helperText: '',
 };
 
