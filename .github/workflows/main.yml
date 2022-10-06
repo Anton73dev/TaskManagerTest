@@ -9,29 +9,18 @@ on:
       - 'feature/devops'
 
 jobs:
-  test:
-    build:
-      runs-on: ubuntu-latest
-      environment: dev
-      steps:
-        - uses: actions/checkout@v2
-        - name: Run tests
-          env:
-            COVERAGE: true
-            RAILS_ENV: test
-          run: docker-compose --file docker-compose.ci.yml run ci
-        - name: Coveralls Parallel
-            uses: coverallsapp/github-action@master
-            with:
-              github-token: ${{ secrets.github_token }}
-              flag-name: run-${{ matrix.test_number }}
-              parallel: true
-  finish:
-    needs: test
+  build:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
-    - name: Coveralls Finished
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.github_token }}
-        parallel-finished: true
+      - uses: actions/checkout@v2
+      - name: Run tests
+        env:
+          COVERAGE: true
+          RAILS_ENV: test
+        run: docker-compose --file docker-compose.ci.yml run ci
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          parallel-finished: true
