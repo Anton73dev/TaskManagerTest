@@ -1,0 +1,21 @@
+name: Main
+
+on:
+  pull_request:
+    branches:
+      - 'develop'
+  push:
+    branches:
+      - 'feature/devops-n'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        env:
+          COVERAGE: true
+          RAILS_ENV: test
+        run: docker-compose --file docker-compose.ci.yml run ci
