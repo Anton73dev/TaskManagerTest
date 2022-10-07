@@ -44,6 +44,9 @@ group :development, :test do
 
   gem 'factory_bot_rails'
   gem 'rubocop'
+  gem 'simplecov', require: false
+  gem 'coveralls', require: false
+  gem 'simplecov-lcov', '~> 0.8.0'
 end
 
 group :development do
@@ -61,10 +64,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  gem 'simplecov', require: false
-  gem 'coveralls', require: false
-  gem 'coveralls_reborn', '~> 0.25.0', require: false
-  gem 'simplecov-lcov', '~> 0.8.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

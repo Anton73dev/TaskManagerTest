@@ -16,7 +16,6 @@ SimpleCov.start('rails') do
   add_filter ['version.rb', 'initializer.rb']
 end
 
-
 Coveralls.wear!
 
 ENV['RAILS_ENV'] ||= 'test'
