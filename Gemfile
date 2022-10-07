@@ -63,6 +63,8 @@ group :test do
   gem 'webdrivers'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
+  gem 'coveralls_reborn', '~> 0.25.0', require: false
+  gem 'simplecov-lcov', '~> 0.8.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
