@@ -1,5 +1,5 @@
 require 'simplecov'
-require 'coveralls'
+
 
 SimpleCov.start('rails') do
   if ENV['CI']
@@ -16,7 +16,6 @@ SimpleCov.start('rails') do
   add_filter ['version.rb', 'initializer.rb']
 end
 
-Coveralls.wear!
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
