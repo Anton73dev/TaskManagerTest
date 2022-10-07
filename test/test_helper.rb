@@ -1,9 +1,8 @@
-require 'simplecov'
-require 'coveralls'
+require 'simplecov-lcov'
+# require 'coveralls'
 
-SimpleCov.start('rails') do
+SimpleCov.start do
   if ENV['CI']
-    require 'simplecov-lcov'
 
     SimpleCov::Formatter::LcovFormatter.config do |c|
       c.report_with_single_file = true
@@ -16,7 +15,7 @@ SimpleCov.start('rails') do
   add_filter ['version.rb', 'initializer.rb']
 end
 
-Coveralls.wear!
+# Coveralls.wear!
 
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
