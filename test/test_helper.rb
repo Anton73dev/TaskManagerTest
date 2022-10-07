@@ -1,6 +1,5 @@
 require 'simplecov'
-require 'simplecov-lcov'
-SimpleCov.formatter = SimpleCov::Formatter::LcovFormatter
+
 SimpleCov.start
 
 ENV['RAILS_ENV'] ||= 'test'
