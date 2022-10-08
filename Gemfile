@@ -37,6 +37,7 @@ gem 'kaminari'
 gem 'ransack'
 gem 'responders'
 gem 'active_model_serializers'
+gem 'simplecov-lcov', '~> 0.8.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -44,7 +45,6 @@ group :development, :test do
 
   gem 'factory_bot_rails'
   gem 'rubocop'
-  gem 'simplecov-lcov', '~> 0.8.0'
 end
 
 group :development do
@@ -64,7 +64,6 @@ group :test do
   gem 'webdrivers'
   gem 'simplecov', require: false
   gem 'coveralls', require: false
-  gem 'simplecov-lcov', '~> 0.8.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
