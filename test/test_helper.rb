@@ -2,8 +2,8 @@ require 'simplecov'
 require 'simplecov-lcov'
 # require 'coveralls'
 
-p 111111111111111111111111111111111111
-p Rails.root.join('coverage/lcov.info')
+# p 111111111111111111111111111111111111
+# p Rails.root.join('coverage/lcov.info')
 
 SimpleCov.start do
   SimpleCov::Formatter::LcovFormatter.config do |c|
