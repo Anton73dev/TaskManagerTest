@@ -9,7 +9,7 @@ on:
       - 'feature/devops-n'
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     environment: dev
     steps:
@@ -19,12 +19,7 @@ jobs:
           COVERAGE: true
           RAILS_ENV: test
         run: docker-compose --file docker-compose.ci.yml run ci
-
-  finish:
-  needs: test
-  runs-on: ubuntu-latest
-  steps:
-    - name: Coveralls Finished
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.github_token }}
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
