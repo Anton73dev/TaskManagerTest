@@ -5,6 +5,13 @@ require 'simplecov-lcov'
 # p 111111111111111111111111111111111111
 # p Rails.root.join('coverage/lcov.info')
 
+out_file = File.new("1111111111111111.txt", "w")
+out_file.puts("write your stuff here")
+out_file.close
+
+p Dir.entries(".")
+p 1111111111111111
+
 SimpleCov.start do
   SimpleCov::Formatter::LcovFormatter.config do |c|
     c.report_with_single_file = true
@@ -14,11 +21,6 @@ SimpleCov.start do
   formatter SimpleCov::Formatter::LcovFormatter
 end
 
-p Dir.entries(".")
-p 1111111111111111
-p p Dir.entries("coverage")
-
-
 # Coveralls.wear!
 
 ENV['RAILS_ENV'] ||= 'CI'
@@ -27,7 +29,6 @@ require 'rails/test_help'
 
 p Dir.entries(".")
 p 1111111111111111
-p p Dir.entries("coverage")
 
 class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
