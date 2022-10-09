@@ -26,6 +26,7 @@ jobs:
     environment: dev
     steps:
       - name: Coveralls
+        run: docker-compose --file docker-compose.ci.yml run ci
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.github_token }}

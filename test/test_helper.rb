@@ -5,20 +5,17 @@ require 'simplecov-lcov'
 # p 111111111111111111111111111111111111
 # p Rails.root.join('coverage/lcov.info')
 
-out_file = File.new("1111111111111111.txt", "w")
-out_file.puts("write your stuff here")
-out_file.close
-
 p Dir.entries(".")
 p 1111111111111111
 
-SimpleCov.start do
+SimpleCov.start 'rails' do
   SimpleCov::Formatter::LcovFormatter.config do |c|
     c.report_with_single_file = true
     c.single_report_path = 'coverage/lcov.info'
   end
 
   formatter SimpleCov::Formatter::LcovFormatter
+  add_filter %w[version.rb initializer.rb]
 end
 
 # Coveralls.wear!
