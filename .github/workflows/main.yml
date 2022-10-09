@@ -23,5 +23,3 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          base-path: ${RAILS_ROOT}
-          path-to-lcov: coverage/lcov.info
