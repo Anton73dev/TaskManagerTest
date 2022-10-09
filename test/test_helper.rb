@@ -1,31 +1,26 @@
 require 'simplecov'
 require 'simplecov-lcov'
-# require 'coveralls'
 
-# p 111111111111111111111111111111111111
-# p Rails.root.join('coverage/lcov.info')
-
-p Dir.entries(".")
-p 1111111111111111
 
 SimpleCov.start 'rails' do
-  SimpleCov::Formatter::LcovFormatter.config do |c|
-    c.report_with_single_file = true
-    c.single_report_path = 'coverage/lcov.info'
+  if ENV['CI']
+    require 'simplecov-lcov'
+    p 22222222222222222222
+    SimpleCov::Formatter::LcovFormatter.config do |c|
+      c.report_with_single_file = true
+      c.single_report_path = 'coverage/lcov.info'
+    end
+
+    formatter SimpleCov::Formatter::LcovFormatter
   end
 
-  formatter SimpleCov::Formatter::LcovFormatter
   add_filter %w[version.rb initializer.rb]
 end
 
-# Coveralls.wear!
 
-ENV['RAILS_ENV'] ||= 'CI'
+ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
-
-p Dir.entries(".")
-p 1111111111111111
 
 class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
