@@ -37,9 +37,6 @@ gem 'kaminari'
 gem 'ransack'
 gem 'responders'
 gem 'active_model_serializers'
-gem 'simplecov-lcov', '~> 0.8.0'
-gem 'simplecov', require: false
-gem 'coveralls', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +44,10 @@ group :development, :test do
 
   gem 'factory_bot_rails'
   gem 'rubocop'
+  gem 'simplecov-lcov', '~> 0.8.0'
+  gem 'simplecov', require: false
+  gem 'coveralls', require: false
+  gem 'coveralls_reborn', '~> 0.25.0', require: false
 end
 
 group :development do
