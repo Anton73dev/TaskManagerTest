@@ -9,7 +9,6 @@ on:
       - 'feature/devops-n'
 
 jobs:
-  build:
   test:
     runs-on: ubuntu-latest
     environment: dev
@@ -20,6 +19,7 @@ jobs:
           COVERAGE: true
           RAILS_ENV: test
         run: docker-compose --file docker-compose.ci.yml run ci
+
   finish:
   needs: test
   runs-on: ubuntu-latest
