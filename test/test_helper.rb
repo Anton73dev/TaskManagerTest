@@ -4,6 +4,9 @@ require 'simplecov-lcov'
 
 # p 111111111111111111111111111111111111
 # p Rails.root.join('coverage/lcov.info')
+p Dir.entries(".")
+p 1111111111111111
+p p Dir.entries("coverage")
 
 SimpleCov.start do
   SimpleCov::Formatter::LcovFormatter.config do |c|
