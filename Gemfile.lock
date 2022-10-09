@@ -356,7 +356,7 @@ DEPENDENCIES
   selenium-webdriver
   simple_form
   simplecov
-  simplecov-lcov (~> 0.8.0)
+  simplecov-lcov
   slim-rails
   state_machines
   state_machines-activerecord
