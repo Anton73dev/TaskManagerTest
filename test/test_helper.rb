@@ -4,9 +4,6 @@ require 'simplecov-lcov'
 
 # p 111111111111111111111111111111111111
 # p Rails.root.join('coverage/lcov.info')
-p Dir.entries(".")
-p 1111111111111111
-p p Dir.entries("coverage")
 
 SimpleCov.start do
   SimpleCov::Formatter::LcovFormatter.config do |c|
@@ -17,11 +14,20 @@ SimpleCov.start do
   formatter SimpleCov::Formatter::LcovFormatter
 end
 
+p Dir.entries(".")
+p 1111111111111111
+p p Dir.entries("coverage")
+
+
 # Coveralls.wear!
 
 ENV['RAILS_ENV'] ||= 'CI'
 require_relative '../config/environment'
 require 'rails/test_help'
+
+p Dir.entries(".")
+p 1111111111111111
+p p Dir.entries("coverage")
 
 class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
