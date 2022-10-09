@@ -13,7 +13,7 @@ end
 
 # Coveralls.wear!('rails')
 
-ENV['RAILS_ENV'] ||= 'test'
+ENV['RAILS_ENV'] ||= 'CI'
 require_relative '../config/environment'
 require 'rails/test_help'
 
