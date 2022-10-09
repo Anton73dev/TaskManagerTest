@@ -2,7 +2,7 @@ require 'simplecov'
 require 'simplecov-lcov'
 
 
-SimpleCov.start 'rails' do
+SimpleCov.start do
   require 'simplecov-lcov'
 
   SimpleCov::Formatter::LcovFormatter.config do |c|
